@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Blackjack</h1>
+    <div id="statistics">
+        <label for="cards left">Ilość pozostałych kart w talii: </label>
+        <p id="cards_in_deck">00</p>
+        <label for="acount balance">Balands konta: </label>
+        <p id="player_balance"></p>
+    </div>
+    <div id="bet">
+        <p>Podaj wielkość stawki:</p>
+        <input type="number" id="bet_value" name="bet_value">
+        <button id="bet_accept_button">Ok!</button>
+    </div>
+    <div id="game_status">
+        Podaj stawkę!
+    </div>
+    <div id="butons">
+        <button id="start_first_game">Zacznij pierwszą grę</button>
+        <button id="hit_button">Hit!</button>
+        <button id="start_game">Zacznij grę</button>
+        <button id="pass_button">Pass!</button>
+        <button id="restart_button">Od początku</button>
+    </div>
+    <div id="players_hand">
+        <p>Twoje karty:</p>
+        <p id="players_cards">pJ pA</p>
+        <div id="img_players_cards">
+        </div>
+        <p>Twoje punkty</p>
+        <p id="players_points"></p>
+    </div>
+    <div id="dealers_hand">
+        <p>Karty dealera:</p>
+        <p id="dealers_cards"></p>
+        <div id="img_dealers_cards"></div>
+        <p>Punkty dealera</p>
+        <p id="dealers_points"></p>
+    </div>
+</body>
+
+</html>

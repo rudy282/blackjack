@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "attach",
+            "name": "Attach",
+            "pathMappings": [
+                {
+                    "url": "http://localhost:5500",
+                    "path": "${workspaceFolder}"
+                }
+            ]
+        }
+    ]
+}

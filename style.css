@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+}
+
+#info-header {
+    align-self: center;
+    position: absolute;
+    top: 10vh;
+    font-size: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    #info-header {
+        position: relative;
+        top: 0;
+    }
+}
+
+#info {
+    font-size: clamp(0.5rem, 1.5rem, 2rem);
+    flex-direction: column;
+    padding: 0 clamp(1vw, 5vw, 10vw);
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(230, 225, 225);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+#info-button {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    border: 2px solid black;
+}
+
+
+
+
+
+
+#players_cards {
+    color: red;
+}
+
+#players_points {
+    color: red;
+}
+
+#dealers_cards {
+    color: green;
+}
+
+#dealers_points {
+    color: green;
+}
+
+.cards {
+    max-height: 100px;
+    max-width: auto;
+    margin-right: 10px
+}
