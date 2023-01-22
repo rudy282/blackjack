@@ -7,46 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-game.css">
 </head>
 
 <body>
-    <h1>Blackjack</h1>
-    <div id="statistics">
-        <label for="cards left">Ilość pozostałych kart w talii: </label>
-        <p id="cards_in_deck">00</p>
-        <label for="acount balance">Balands konta: </label>
-        <p id="player_balance"></p>
-    </div>
-    <div id="bet">
-        <p>Podaj wielkość stawki:</p>
-        <input type="number" id="bet_value" name="bet_value">
-        <button id="bet_accept_button">Ok!</button>
-    </div>
-    <div id="game_status">
-        Podaj stawkę!
-    </div>
-    <div id="butons">
-        <button id="start_first_game">Zacznij pierwszą grę</button>
-        <button id="hit_button">Hit!</button>
-        <button id="start_game">Zacznij grę</button>
-        <button id="pass_button">Pass!</button>
-        <button id="restart_button">Od początku</button>
-    </div>
-    <div id="players_hand">
-        <p>Twoje karty:</p>
-        <p id="players_cards">pJ pA</p>
-        <div id="img_players_cards">
+    <div id="container">
+        <div id="header">
+            <h1>BlackJack</h1>
         </div>
-        <p>Twoje punkty</p>
-        <p id="players_points"></p>
-    </div>
-    <div id="dealers_hand">
-        <p>Karty dealera:</p>
-        <p id="dealers_cards"></p>
-        <div id="img_dealers_cards"></div>
-        <p>Punkty dealera</p>
-        <p id="dealers_points"></p>
+
+        <div id="bet-statats">
+            Balans konta: $<span id="player_balance">123</span>
+            <div id="bet">
+                <label for="bet_value">Podaj wielkość stawki:</label>
+                <input type="number" name="bet_value" id="bet_value">
+                <button id="bet_accept_button">Ok!</button>
+            </div>
+        </div>
+
+
+        <div id="game-stats">
+            Stan gry: <span id="game_status"></span>
+        </div>
+
+        <div id="game-container">
+            <div id="player-points-wrapper">Punkty gracza: <span id="players_points"></span></div>
+            <div id="dealer-points-wrapper">Punkty dealera: <span id="dealers_points"></span></div>
+            <div id="img_players_cards"></div>
+            <div id="img_dealers_cards"></div>
+        </div>
+
+        <div id="buttons">
+            <button id="start_first_game">Zacznij pierwszą grę</button>
+            <button id="hit_button">Hit!</button>
+            <button id="start_game">Zacznij grę</button>
+            <button id="pass_button">Pass!</button>
+            <button id="restart_button">Od początku</button>
+        </div>
     </div>
 </body>
 

@@ -1,6 +1,5 @@
 const shuffleButton = document.querySelector('#shuffle_button');
 const hitButton = document.querySelector('#hit_button');
-const cardsLeft = document.querySelector('#cards_in_deck');
 const game_status = document.querySelector('#game_status');
 const startButton = document.querySelector('#start_game');
 const pass_button = document.querySelector('#pass_button');
@@ -11,6 +10,8 @@ const bet_accept_button = document.querySelector('#bet_accept_button');
 const start_first_game = document.querySelector('#start_first_game');
 
 var deck = new Array;
+
+//deck.push(new Card('kA', "img/cards/kA", null));
 class Card
 {
     constructor(name, path, cost)
@@ -23,19 +24,18 @@ class Card
 
 class User
 {
-    constructor(points, aceBool, hand, points_handler, cards_handler, img_handler)
+    constructor(points, aceBool, hand, points_handler, img_handler)
     {
         this.points = points;
         this.aceBool = aceBool;
         this.hand = hand;
         this.points_handler = points_handler;
-        this.cards_handler = cards_handler;
         this.img_handler = img_handler;
     }
 }
 
-var player = new User(0, false, [], document.querySelector('#players_points'), document.querySelector("#players_cards"), document.querySelector("#img_players_cards"));
-var dealer = new User(0, false, [], document.querySelector('#dealers_points'), document.querySelector("#dealers_cards"), document.querySelector("#img_dealers_cards"));
+var player = new User(0, false, [], document.querySelector('#players_points'), document.querySelector("#img_players_cards"));
+var dealer = new User(0, false, [], document.querySelector('#dealers_points'), document.querySelector("#img_dealers_cards"));
 
 var usedDeck = new Array;
 var ace = false; //defines if player got an ace
@@ -82,8 +82,6 @@ while (k < 1)//adding card
     k++;
 }
 
-cardsLeft.innerHTML = deck.length;
-player.cards_handler.innerHTML = '';
 player.points_handler.innerHTML = '';
 
 function shuffleDeck()
@@ -115,7 +113,6 @@ function hit()
     {
         shuffleCards();
     }
-    cardsLeft.innerHTML = deck.length;
 }
 
 function gameRestart()
@@ -170,10 +167,8 @@ function clearHand()
     clearArray(dealer.hand);
     player.points = 0;
     dealer.points = 0;
-    player.cards_handler.innerHTML = '';
     player.points_handler.innerHTML = '';
     dealer.points_handler.innerHTML = '';
-    dealer.cards_handler.innerHTML = '';
     game_status.innerHTML = 'Gra trwa!';
 }
 
@@ -236,7 +231,6 @@ function addCardToHand(public, isDealer, user)
 
     if (public)
     {
-        user.cards_handler.innerHTML += lastCard.name + " ";
         user.points_handler.innerHTML = user.points;
         addCardImage(lastCard, user.img_handler);
     }
@@ -263,11 +257,9 @@ function pass()
 function showPrivateCard()
 {
     dealer.points_handler.innerHTML = dealer.points;
-    dealer.cards_handler.innerHTML = '';
     dealer.img_handler.innerHTML = '';
     for (let i = 0; i < dealer.hand.length; i++)
     {
-        dealer.cards_handler.innerHTML += dealer.hand[i].name + " ";
         addCardImage(dealer.hand[i], dealer.img_handler);
     }
 }

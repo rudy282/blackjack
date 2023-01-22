@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    height: 100vh;
+}
+
+#header {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+#bet-statats {
+    text-align: center;
+}
+
+#game-stats {
+    text-align: center;
+}
+
+
+#game-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#players_points,
+#dealers_points {
+    color: green;
+}
+
+#player-points-wrapper,
+#dealer-points-wrapper {
+    min-width: 350px;
+    text-align: center;
+}
+
+#img_players_cards,
+#img_dealers_cards {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    min-height: 300px;
+    border: 1px solid black;
+}
+
+.cards {
+    max-height: 100px;
+    max-width: auto;
+    margin-right: 10px
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
