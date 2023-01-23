@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -9,6 +9,18 @@
 
 #container {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#wrapper {
+    /* margin-top: -8rem; */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    background-color: whitesmoke;
 }
 
 #header {
@@ -21,10 +33,43 @@
     text-align: center;
 }
 
-#game-stats {
-    text-align: center;
+#bet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: .5rem;
+
+    margin: 0.5rem 0;
 }
 
+#bet_value {
+    height: 2.613rem;
+    border: 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: rgb(252, 252, 252);
+    outline: none;
+}
+
+#bet_value:focus {
+    box-shadow: 0px 0px 5px 0px rgba(109, 111, 134, 1);
+}
+
+#game-stats {
+    text-align: center;
+    margin: .5rem 0;
+}
+
+#separator {
+    height: 1px;
+    background-color: black;
+    margin: .5rem 1rem;
+}
 
 #game-container {
     display: flex;
@@ -33,8 +78,9 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    gap: 1rem;
 
-    max-width: 700px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -50,6 +96,28 @@
     text-align: center;
 }
 
+@media screen and (max-width: 749px) {
+    #container {
+        height: auto;
+    }
+
+    #wrapper {
+        margin-top: 0;
+    }
+
+    #game-container {
+        gap: 0;
+        max-width: 700px;
+    }
+
+    #player-points-wrapper,
+    #img_players_cards {
+        order: 1;
+    }
+}
+
+
+
 #img_players_cards,
 #img_dealers_cards {
     width: 350px;
@@ -61,13 +129,17 @@
     align-content: center;
 
     min-height: 300px;
-    border: 1px solid black;
+    background-color: rgb(252, 252, 252);
+    border-radius: 25px;
+
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .cards {
     max-height: 100px;
     max-width: auto;
-    margin-right: 10px
+    margin: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 #buttons {
@@ -76,4 +148,47 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+
+    margin-top: 1.2rem;
+}
+
+button {
+    background-color: rgb(252, 252, 252);
+
+    border: 0;
+    border-radius: .5rem;
+    color: #111827;
+
+    font-size: .875rem;
+    font-weight: 700;
+    padding: .75rem 1rem;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    filter: brightness(100%);
+
+    margin: .2rem;
+    margin-bottom: .5rem;
+
+    transition: filter ease-in-out .5s;
+
+    outline: none;
+}
+
+button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+button:disabled {
+    cursor: default;
+    filter: brightness(90%);
+}
+
+button:disabled:hover {
+    background-color: #FFFFFF;
+}
+
+button:focus {
+    box-shadow: 0px 0px 5px 0px rgba(109, 111, 134, 1);
 }

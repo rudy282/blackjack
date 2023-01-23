@@ -169,7 +169,7 @@ function clearHand()
     dealer.points = 0;
     player.points_handler.innerHTML = '';
     dealer.points_handler.innerHTML = '';
-    game_status.innerHTML = 'Gra trwa!';
+    game_status.innerHTML = 'Podaj stawkę';
 }
 
 function clearArray(arr) //clears whole array
@@ -181,6 +181,8 @@ function clearArray(arr) //clears whole array
 function startGame()
 {
     if (gameStarted) return;
+
+    game_status.innerHTML = "Gra trwa!";
     gameStarted = true;
 
     if (firstGame == true)
@@ -312,7 +314,7 @@ function takeBet()
     {
         start_first_game.disabled = false;
         startButton.disabled = false;
-        game_status.innerHTML = "Rozpocznij grę!"
+        game_status.innerHTML = "Zacznij grę";
     }
 }
 
@@ -322,10 +324,10 @@ function startFirstGame()
     startGame();
     hitButton.style.display = "";
     pass_button.style.display = "";
-    game_status.innerHTML = "Gra trwa!"
+    game_status.innerHTML = "Gra trwa!";
 }
 
 function addCardImage(card, handler)
 {
-    handler.innerHTML += `<img src="${card.path}" class="cards">`
+    handler.innerHTML += `<img src="${card.path}" class="cards">`;
 }
